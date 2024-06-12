@@ -8,7 +8,7 @@ import {
 import { Suspense, useEffect, useState } from 'react';
 import { CuboidCollider, Physics, RigidBody } from '@react-three/rapier';
 import { ConvaiFPS } from './fps/convaiFPS';
-import { Corey } from './models/Corey';
+import { Nikhil } from './models/Nikhil';
 export const Experience = ({ client }) => {
   const [gravity, setGravity] = useState([0, 0, 0]);
   useEffect(() => {
@@ -38,7 +38,8 @@ export const Experience = ({ client }) => {
         <Physics gravity={gravity}>
           <ConvaiFPS />
           <Sky />
-          <Corey client={client} />
+          {/* <Corey client={client} /> */}
+          <Nikhil client={client} />
           <Grid followCamera infiniteGrid fadeDistance={50} />
           <RigidBody type="fixed">
             <CuboidCollider args={[5, 5, 0.1]} position={[0, 1.5, -3]} />

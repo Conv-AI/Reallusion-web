@@ -41,6 +41,9 @@ export function useConvaiClient(characterId, apiKey) {
       enableFacialData: true,
     });
 
+    convaiClient.current.setErrorCallback((type, message) => {
+      console.log(type, message);
+    })
 
     convaiClient.current.setResponseCallback((response) => {
       if (response.hasUserQuery()) {
